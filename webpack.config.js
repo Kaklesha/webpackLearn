@@ -1,7 +1,8 @@
 const path = require('path')
 
-module.exports={
-    mode: "development",
+module.exports=(env)=>{
+    return{
+        mode: env.mode?? "development",
     entry: path.resolve(__dirname,'src', 'index.js'
     ),
     output: {
@@ -9,5 +10,5 @@ module.exports={
             filename: '[name].[contenthash].js',
             clean:true
         
-    }
+    }}
 };
