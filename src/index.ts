@@ -1,3 +1,3 @@
 import { calc } from "./test";
 
-console.log(calc(99,4));
+console.log(calc(59,4));
