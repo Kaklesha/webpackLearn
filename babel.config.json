@@ -1,0 +1,13 @@
+//актуально использовать отдельный файл для Jest , сделав его "универсальным"
+//настройки этого файла продублированы в buildBabelLoader 
+// {
+//     "presets": ["@babel/preset-env",
+//             "@babel/preset-typescript",
+//             ["@babel/preset-react",{
+//                 "runtime":"automatic"
+//             }]
+//     ]
+// }
+{
+    
+}
