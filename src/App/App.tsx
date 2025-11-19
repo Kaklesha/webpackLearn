@@ -1,12 +1,23 @@
 import { useState } from "react";
 import styles from './App.module.scss';
 import { Link, Outlet } from "react-router-dom";
+import avatarPng from '@/assets/45xQrypuOWg_1.png';
+import avatarJpg from '@/assets/Lecpu25jZrQ.jpg';
+import AvatarSvg from '@/assets/rightarch.svg';
 export const App = () =>{
 
     const [count, setCount] = useState<number>(0);
     const increment = ()=>{ setCount(prev=>prev+1)}
     return(
         <>
+            <>
+                <img className={styles.imageAvatar} src={avatarPng} alt="avatar" />
+                <img className={styles.imageAvatar} src={avatarJpg} alt="avatar" />
+            </>
+            <>
+                <AvatarSvg height={160} width={160} style={{color:'red'}} />
+                {/* вместо плагина на цвет svg  fill={"red"} stroke={"red"}  */}
+            </>
         <Link to={'/about'}>about</Link>
         <br />
         <Link to={'/shop'}>shop</Link>
