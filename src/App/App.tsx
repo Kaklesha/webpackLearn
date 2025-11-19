@@ -6,8 +6,8 @@ import avatarJpg from '@/assets/Lecpu25jZrQ.jpg';
 import AvatarSvg from '@/assets/rightarch.svg';
 
 //TREE SHAKING
-function TODO() {
-console.log("FFFF")
+function TODO(a:number) {
+console.log(a)
 }
 
 export const App = () =>{
@@ -26,6 +26,8 @@ export const App = () =>{
     //     alert("DEV");
     //     addDevtools()
     // }
+
+    //TODO("2313");
 
     return(
         <>

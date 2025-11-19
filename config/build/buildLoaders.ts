@@ -45,8 +45,15 @@ const scssLoader =  {
             ],
     };
 const tsLoader= {
+    //ts-loader умеет работать с JSX
+    //без TS нужно использовать Babel-loader
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: [{loader:'ts-loader',
+            options:{
+                //не проверять типы вовремя сборки при dev mode тк работает плагин ForkTsCheckerWebpack
+                transpileOnly: isDev,
+            }
+        }],
         exclude: /node_modules/,
     };
 
