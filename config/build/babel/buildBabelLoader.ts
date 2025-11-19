@@ -1,6 +1,20 @@
 import { BuildOptions } from "../types/types";
+import { removeDataTestIdBabelPlugin } from "./removeDataTestIdBabelPlugin";
 
 export function buildBabelLoader(options: BuildOptions) {
+  const plugins = [];
+
+  const isDev = options.mode === "development";
+  const isProd = options.mode === "production";
+  if (isProd) {
+    plugins.push([
+      removeDataTestIdBabelPlugin,
+      {
+        props: ["data-testid"],
+      },
+    ]);
+  }
+
   return {
     test: /\.tsx?$/,
     exclude: /node_modules/,
@@ -17,6 +31,7 @@ export function buildBabelLoader(options: BuildOptions) {
             },
           ],
         ],
+        plugins: plugins.length ? plugins : undefined,
       },
     },
   };

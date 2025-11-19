@@ -31,9 +31,9 @@ export const App = () =>{
 
     return(
         <>
-        <h2>  PLATFORM={__PLATFORM__}</h2>
+        <h2 data-testid={"platform.DataTestId"}>  PLATFORM={__PLATFORM__}</h2>
             <>
-                <img className={styles.imageAvatar} src={avatarPng} alt="avatar" />
+                <img data-testid={"avatarPng"} className={styles.imageAvatar} src={avatarPng} alt="avatar" />
                 <img className={styles.imageAvatar} src={avatarJpg} alt="avatar" />
             </>
             <>
