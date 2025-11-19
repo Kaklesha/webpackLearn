@@ -9,5 +9,7 @@ export function buildDevServer(options:BuildOptions):DevServerConfiguration{
         //history работает только для devserv, если через nginx, надо проксировать на index.html
         //см про деплой frontend приложения
         historyApiFallback: true,
+        //Hot Module Replacement (HMR) в лоб с react не работает испл-ем fast-refresh-plugin
+        hot:true
     }
 }

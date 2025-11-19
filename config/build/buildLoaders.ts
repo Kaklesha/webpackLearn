@@ -1,6 +1,7 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { ModuleOptions } from "webpack";
 import { BuildOptions } from "./types/types";
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 
 export function buildLoaders(options:BuildOptions): ModuleOptions['rules'] {
         const isDev = options.mode ==='development';
@@ -52,6 +53,9 @@ const tsLoader= {
             options:{
                 //не проверять типы вовремя сборки при dev mode тк работает плагин ForkTsCheckerWebpack
                 transpileOnly: isDev,
+                getCustomTransformers:()=>({
+                    before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+                }),
             }
         }],
         exclude: /node_modules/,
