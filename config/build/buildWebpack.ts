@@ -28,7 +28,10 @@ return {
         rules: buildLoaders(options),
     },
     resolve: buildResolvers(options), 
-    devtool: isDev &&'inline-source-map',
+    //Source-map rebuild:fast for dev; build:slow for prod. For what do source-map needs in prod?
+    //devtool: isDev ?'eval-cheap-module-source-map':'source-map',
+    //Now use source-map in the dev mode only 
+    devtool: isDev &&'eval-cheap-module-source-map',
     devServer: isDev ?buildDevServer(options):undefined,
 
  

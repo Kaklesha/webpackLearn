@@ -6,14 +6,17 @@ import avatarJpg from '@/assets/Lecpu25jZrQ.jpg';
 import AvatarSvg from '@/assets/rightarch.svg';
 
 //TREE SHAKING
-function TODO(a:number) {
-console.log(a)
+function TODO() {
+TODO2();
+}
+function TODO2() {
+throw new Error()
 }
 
 export const App = () =>{
 
     const [count, setCount] = useState<number>(0);
-    const increment = ()=>{ setCount(prev=>prev+1)}
+    const increment = ()=>{ setCount(prev=>prev+1); TODO()}
 
     // if(__PLATFORM__==="desktop"){
     //     return <>ISDESKTOPPATFORM</>
